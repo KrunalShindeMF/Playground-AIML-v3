@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="scroll-smooth h-fit">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Playground</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/output.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body class="scroll-smooth h-fit">
+    <!-- Navbar -->
+    <div class="w-full h-fit flex justify-center items-center lg:p-10 p-6">
+      <div class="w-full h-fit ps-6 pe-5 py-3 lg:ps-12 lg:py-5 border border-stone-200/65 lg:rounded-full rounded-3xl bg-white flex flex-wrap justify-between items-center shadow-[0_0_15px_rgba(0,0,0,0.04)]">
+        <!-- Logo and Brand Name -->
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="38" height="38">
+            <defs>
+              <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" /> <!-- cyan-400 -->
+                <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" /> <!-- cyan-600 -->
+              </linearGradient>
+            </defs>
+            <path d="m261.02 522.36 130.57 226.15c23.312 40.383 9.457 92.102-30.926 115.41-40.383 23.312-92.102 9.457-115.41-30.926l-131-226.89c-7.1641-12.402-11.262-26.805-11.262-42.156 0-46.633 37.852-84.488 84.488-84.488 31.52 0 59.027 17.289 73.543 42.902zm250.82-15.266c4.2305 4.6445 7.9492 9.7539 11.074 15.266l130.56 226.15c23.324 40.383 9.457 92.102-30.926 115.41-40.383 23.312-92.09 9.457-115.41-30.926l-80.863-140.08c-4.2422-4.6445-7.9609-9.7539-11.074-15.266l-130.57-226.15c-23.312-40.383-9.457-92.102 30.926-115.41 40.383-23.312 92.102-9.457 115.41 30.926zm272.96 15.266 130.57 226.15c23.312 40.383 9.457 92.102-30.926 115.41-40.383 23.312-92.102 9.457-115.41-30.926l-80.875-140.08c-4.2305-4.6445-7.9492-9.7539-11.074-15.266l-130.56-226.15c-23.324-40.383-9.457-92.102 30.926-115.41 40.371-23.312 92.09-9.457 115.41 30.926l80.863 140.08c4.2422 4.6445 7.9609 9.7539 11.074 15.266zm300.95 71.547c7.1641 12.402 11.262 26.805 11.262 42.156 0 46.633-37.852 84.488-84.488 84.488-31.52 0-59.027-17.289-73.543-42.902l-130.57-226.15c-23.312-40.383-9.457-92.102 30.926-115.41 40.383-23.312 92.102-9.457 115.41 30.926z" fill="url(#cyanGradient)"/>
+          </svg>
+          <a href="/" class="lg:text-2xl text-xl font-medium ml-2">Playground</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="text-center py-16 bg-gray-50">
+      <h1 class="text-4xl lg:text-5xl font-semibold mb-10 mt-4">Welcome to Playground,<br>where innovation meets efficiency!</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
+        At the heart of our platform lies a simple yet powerful mission: to empower individuals <br>and organizations with intelligent tools that make complex processes effortless.<br>Whether you're a legal professional, policymaker, healthcare provider, or just someone <br>looking for accurate data solutions, we have something for everyone.
+      </p>
+    </section>
+
+    <!-- Vision and Commitment -->
+    <section class="py-4 bg-white p-10">
+      <div class="container mx-auto grid lg:grid-cols-2 gap-8">
+        <div class="p-8 shadow-lg rounded-lg border">
+          <img src="../static/light-bulb.png" alt="" class="rounded-2xl mb-4">
+          <h2 class="text-2xl font-semibold mb-4">Our Vision</h2>
+          <p class="text-gray-600">
+            We envision a future where technology empowers individuals and businesses to operate smarter, faster, and with enhanced efficiency.
+          </p>
+        </div>
+        <div class="p-8 shadow-lg rounded-lg border">
+          <img src="../static/relationship.png" alt="" class="rounded-2xl mb-4">
+          <h2 class="text-2xl font-semibold mb-4">Our Commitment</h2>
+          <p class="text-gray-600">
+            We are dedicated to continuous improvement, incorporating user feedback, and staying at the forefront of technological advancements.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Offer -->
+    <section id="product" class="py-16 bg-gray-50 p-10">
+      <div class="container mx-auto text-center justify-center">
+        <h2 class="text-3xl font-bold mb-16">What We Offer</h2>
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="p-6 bg-white shadow rounded-lg border">
+            <div class="flex justify-center items-center bg-emerald-600 rounded-full mb-5 mx-auto" style="width: 64px; height: 64px;">
+              <img src="../static/legal.png" alt="Legal Analyzer" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Legal Analyzer</h3>
+            <p class="text-gray-600">Streamline legal document analysis.</p>
+          </div>
+          <div class="p-6 bg-white shadow rounded-lg border">
+            <div class="flex justify-center items-center bg-purple-700 rounded-full mb-5 mx-auto" style="width: 64px; height: 64px;">
+              <img src="../static/policy.png" alt="Policy Analyzer" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Policy Analyzer</h3>
+            <p class="text-gray-600">Simplify policy evaluations.</p>
+          </div>
+          <div class="p-6 bg-white shadow rounded-lg border">
+            <div class="flex justify-center items-center bg-blue-700 rounded-full mb-5 mx-auto" style="width: 64px; height: 64px;">
+              <img src="../static/data.png" alt="Data Extraction" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Data Extraction</h3>
+            <p class="text-gray-600">Extract and manage data effortlessly.</p>
+          </div>
+          <div class="p-6 bg-white shadow rounded-lg border">
+            <div class="flex justify-center items-center bg-red-500 rounded-full mb-5 mx-auto" style="width: 64px; height: 64px;">
+              <img src="../static/medical.png" alt="Medical Report Analyzer" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Medical Report Analyzer</h3>
+            <p class="text-gray-600">Analyze medical records effectively.</p>
+          </div>
+          <div class="p-6 bg-white shadow rounded-lg border">
+            <div class="flex justify-center items-center bg-sky-400 rounded-full mb-5 mx-auto" style="width: 64px; height: 64px;">
+              <img src="../static/board.png" alt="Board Resolution Analyzer" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Board Resolution Analyzer</h3>
+            <p class="text-gray-600">Review and validate resolutions.</p>
+          </div>
+          <div class="p-6 bg-white shadow rounded-lg border">
+            <div class="flex justify-center items-center bg-stone-100 rounded-full mb-5 mx-auto" style="width: 64px; height: 64px;">
+              <img src="../static/tax-icon-9.png" alt="Tax Analyser" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Tax Analyser</h3>
+            <p class="text-gray-600">Ask anything related Tax</p>
+          </div>
+          <div class="p-6 bg-white shadow rounded-lg border">
+            <div class="flex justify-center items-center bg-emerald-600 rounded-full mb-5 mx-auto" style="width: 64px; height: 64px;">
+              <img src="../static/govt_icon.png" alt="Goverment ID" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Goverment ID</h3>
+            <p class="text-gray-600">Verify your ID</p>
+          </div>
+          <div class="p-6 bg-white shadow rounded-lg border">
+            <div class="flex justify-center items-center bg-orange-600 rounded-full mb-5 mx-auto" style="width: 64px; height: 64px;">
+              <img src="../static/soon.png" alt="Coming Soon" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Coming Soon</h3>
+            <p class="text-gray-600">More innovative solutions on the way.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="service" class="py-16 bg-white p-10">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-16">Why Choose Us?</h2>
+        <div class="flex flex-row gap-8 justify-center">
+          <div class="p-6 shadow rounded-lg border">
+            <img src="../static/Vector-1.png" alt="" class="rounded-2xl mb-4 mx-auto w-16 h-16">
+            <h3 class="text-xl font-semibold mb-2">Accuracy</h3>
+            <p class="text-gray-600">AI-driven accuracy ensures precision.</p>
+          </div>
+          <div class="p-6 shadow rounded-lg border">
+            <img src="../static/speed.png" alt="" class="rounded-2xl mb-4 mx-auto w-16 h-16">
+            <h3 class="text-xl font-semibold mb-2">Speed</h3>
+            <p class="text-gray-600">Instant results to save time.</p>
+          </div>
+          <div class="p-6 shadow rounded-lg border">
+            <img src="../static/user-friendly.png" alt="" class="rounded-2xl mb-4 mx-auto w-16 h-16">
+            <h3 class="text-xl font-semibold mb-2">User-Friendly</h3>
+            <p class="text-gray-600">Intuitive design that's easy to use for everyone.</p>
+          </div>
+          <div class="p-6 shadow rounded-lg border">
+            <img src="../static/data-protection.png" alt="" class="rounded-2xl mb-4 mx-auto w-16 h-16">
+            <h3 class="text-xl font-semibold mb-2">Data Security</h3>
+            <p class="text-gray-600">Your privacy is our priority
+              secured by robust systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="company" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-16 text-center">Contact Details</h2>
+        
+        <div class="max-w-5xl mx-auto grid grid-cols-3 gap-12">
+          <!-- Email Section -->
+          <div class="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="mb-4">
+              <h4 class="text-lg font-semibold text-gray-800 mb-3">Email</h4>
+              <a href="mailto:arpan@mobilefirst.in" class="text-cyan-600 hover:text-cyan-700 transition-colors">
+                arpan@mobilefirst.in
+              </a>
+            </div>
+          </div>
+    
+          <!-- USA Address -->
+          <div class="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="mb-4">
+              <h4 class="text-lg font-semibold text-gray-800 mb-3">USA Office</h4>
+              <p class="text-gray-600 mb-2">436 9400 W Parmer Ln</p>
+              <p class="text-gray-600 mb-2">Austin 78717</p>
+              <a href="tel:+14086277899" class="text-cyan-600 hover:text-cyan-700 transition-colors">
+                +1 (408)-627-7899
+              </a>
+            </div>
+          </div>
+          
+          <!-- India Address -->
+          <div class="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="mb-4">
+              <h4 class="text-lg font-semibold text-gray-800 mb-3">India Office</h4>
+              <p class="text-gray-600 mb-2">A-1101, EastFace, Ambli</p>
+              <p class="text-gray-600 mb-2">Ahmedabad</p>
+              <a href="tel:+919974007715" class="text-cyan-600 hover:text-cyan-700 transition-colors">
+                +91 99740 07715
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

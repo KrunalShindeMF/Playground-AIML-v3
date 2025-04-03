@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.7"
+  },
+  "dependencies": {
+    "tailwind.config.js": "^1.0.6",
+    "update": "^0.7.4"
+  }
+}

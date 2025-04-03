@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal Analyser</title>
+    <meta
+      name="description"
+      content="Legal Analyser is a powerful tool for analyzing legal documents."
+    />
+    <link rel="canonical" href="https://www.policy.fintegrationai.com/" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dist/css/output.css') }}"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <div
+      class="w-full h-10 border-b flex items-center justify-between px-8 py-8"
+    >
+      <a href="/"
+        ><h1 class="text-xl font-semibold text-cyan-600">Playground</h1></a
+      >
+      <a href="/upload">
+        <div
+          class="w-fit py-2 px-3 bg-white border border-cyan-600 text-cyan-600 hover:border-cyan-700 hover:text-cyan-700 text-sm rounded-lg font-semibold"
+        >
+          Get started
+        </div>
+      </a>
+    </div>
+
+    <!-- main section -->
+    <div
+      class="w-full h-fit bg-stone-50 bg-opacity-40 bg-cover bg-no-repeat bg-center flex flex-col items-center justify-start gap-8 px-10 py-16 lg:gap-10 lg:px-40 lg:py-20"
+      style="background-image: url(../static/Vector.png)"
+    >
+      <h1
+        class="text-4xl font-semibold text-zinc-800 text-center underline underline-offset-2 decoration-cyan-600"
+      >
+        Upload your Legal document
+      </h1>
+
+      <div class="lg:w-4/6 w-full flex justify-center" id="form-container">
+        <form
+          class="lg:w-5/6 w-full h-fit flex flex-col items-center justify-end gap-12"
+          id="form"
+          action=""
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+          <div class="w-full h-full p-6 bg-white rounded-2xl shadow-lg flex flex-col gap-6">
+            <label for="fileInput" class="flex flex-col items-center justify-center h-80 border-2 border-dashed border-gray-300 hover:border-cyan-400 hover:bg-cyan-50 rounded-xl cursor-pointer">
+              <input type="file" id="fileInput" name="fileInput" accept=".pdf" multipleclass="hidden" required />
+              <div class="flex flex-col items-center justify-center gap-4 p-8" id="display">
+                <p class="text-xl text-gray-500 text-center">
+                  Browse or drag &amp; drop your document here
+                </p>
+                <p class="text-gray-400 text-center">
+                  As of now, only PDF files are accepted
+                </p>
+              </div>
+            </label>
+
+            <label
+              for="emailID"
+              class="flex flex-col justify-center items-center gap-4"
+            >
+              <input
+                type="email"
+                name="emailID"
+                id="emailID"
+                class="w-full h-fit p-4 border-2 border-gray-200 rounded-xl"
+                placeholder="you@example.com"
+                required
+              />
+            </label>
+            <label
+              for="emailID"
+              class="flex flex-col justify-center items-center gap-4"
+            >
+            <select class="w-full h-fit p-4 border-2 border-gray-200 rounded-xl" name="selectedProject" required>
+              <option value="None">Select Product</option>
+              <option value="legal">Legal Analyzer</option>
+              <option value="policy">Policy Analyzer</option>
+              <option value="extraction">Extraction Analyzer</option>
+              <option value="medical">Medical Analyzer</option>
+            </select>
+          </label>
+          </div>
+          <button
+            type="submit"
+            class="w-fit py-3 px-4 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg font-semibold"
+            id="submit"
+          >
+            Upload
+          </button>
+          <div id="error-message" class="text-red-500"></div>
+        </form>
+      </div>
+    </div>
+
+    <div
+      class="w-full h-fit lg:py-4 py-8 px-10 bg-cyan-950 flex lg:flex-row flex-col lg:justify-between justify-center gap-2 items-center border-t border-zinc-600"
+    >
+      <p class="text-stone-300 font-medium">Legal Analyser by FintegrationAI</p>
+      <!-- <div class="flex lg:flex-row flex-col justify-center items-center lg:gap-6 gap-2">
+      <a href="/contact" class="text-stone-400 hover:text-stone-300">Contact us</a>
+      <a href="/privacy" class="text-stone-400 hover:text-stone-300">Privacy policy</a>
+      <a href="/terms" class="text-stone-400 hover:text-stone-300">Terms and conditions</a>
+    </div> -->
+    </div>
+
+    <script src="../static/script.js"></script>
+    <script
+      defer
+      data-domain="analyser.fintegrationai.com"
+      src="https://plausible.io/js/script.js"
+    ></script>
+  </body>
+</html>

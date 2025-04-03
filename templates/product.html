@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="scroll-smooth h-fit">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Our Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/output.css') }}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body class="scroll-smooth h-fit">
+    <!-- Navbar -->
+    <div class="w-full h-fit flex justify-center items-center lg:p-10 p-6">
+        <div class="w-full h-fit ps-6 pe-5 py-3 lg:ps-12 lg:py-5 border border-stone-200/65 lg:rounded-full rounded-3xl bg-white flex flex-wrap justify-between items-center shadow-[0_0_15px_rgba(0,0,0,0.04)]">
+          <!-- Logo and Brand Name -->
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="38" height="38">
+              <defs>
+                <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" /> <!-- cyan-400 -->
+                  <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" /> <!-- cyan-600 -->
+                </linearGradient>
+              </defs>
+              <path d="m261.02 522.36 130.57 226.15c23.312 40.383 9.457 92.102-30.926 115.41-40.383 23.312-92.102 9.457-115.41-30.926l-131-226.89c-7.1641-12.402-11.262-26.805-11.262-42.156 0-46.633 37.852-84.488 84.488-84.488 31.52 0 59.027 17.289 73.543 42.902zm250.82-15.266c4.2305 4.6445 7.9492 9.7539 11.074 15.266l130.56 226.15c23.324 40.383 9.457 92.102-30.926 115.41-40.383 23.312-92.09 9.457-115.41-30.926l-80.863-140.08c-4.2422-4.6445-7.9609-9.7539-11.074-15.266l-130.57-226.15c-23.312-40.383-9.457-92.102 30.926-115.41 40.383-23.312 92.102-9.457 115.41 30.926zm272.96 15.266 130.57 226.15c23.312 40.383 9.457 92.102-30.926 115.41-40.383 23.312-92.102 9.457-115.41-30.926l-80.875-140.08c-4.2305-4.6445-7.9492-9.7539-11.074-15.266l-130.56-226.15c-23.324-40.383-9.457-92.102 30.926-115.41 40.371-23.312 92.09-9.457 115.41 30.926l80.863 140.08c4.2422 4.6445 7.9609 9.7539 11.074 15.266zm300.95 71.547c7.1641 12.402 11.262 26.805 11.262 42.156 0 46.633-37.852 84.488-84.488 84.488-31.52 0-59.027-17.289-73.543-42.902l-130.57-226.15c-23.312-40.383-9.457-92.102 30.926-115.41 40.383-23.312 92.102-9.457 115.41 30.926z" fill="url(#cyanGradient)"/>
+            </svg>
+            <a href="/" class="lg:text-2xl text-xl font-medium ml-2">Playground</a>
+          </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="projects" class="w-full h-fit flex flex-col justify-center items-center lg:mb-32 mb-16">
+        <div class="flex flex-col lg:h-[20vh] justify-center items-center">
+          <h1 class="lg:text-4xl text-2xl font-medium tracking-tight text-black text-center mb-8">Our products</h1>
+        </div>
+  
+        <div class="lg:w-9/12 w-10/12 lg:h-[60vh] h-fit grid lg:grid-cols-2 grid-cols-1 lg:grid-rows-2 grid-rows-6 gap-5">
+
+            <a href="https://pan-fraud-detection.streamlit.app/" target="_blank" class="flex lg:py-0 py-8 justify-center items-center border rounded-xl bg-stone-100 hover:bg-white transition-all duration-300 ease-in-out relative overflow-hidden group">
+                <div class="absolute inset-0 bg-sky-400 opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300"></div>
+                <div class="w-full h-fit flex flex-col justify-center items-center gap-1 relative z-10 transform transition-transform duration-300 group-hover:scale-105">
+                <div class="w-16 h-16 flex justify-center items-center bg-sky-400 rounded-lg mb-5">
+                    <img src="../static/pan_fraud.png" alt="" class="w-8/12 h-8/12">
+                </div>
+                <h3 class="text-xl font-medium relative">
+                    <span class="relative z-10">PAN Card Varification</span>
+                    <span class="absolute left-full top-1/2 text-sky-400 -translate-y-1/2 ml-1 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1">→</span>
+                </h3>
+                <p class="text-sm text-stone-400">Fraud Check</p>
+                </div>
+            </a>
+
+            <div class="flex lg:py-0 py-8 justify-center items-center border rounded-xl bg-stone-100 hover:bg-white transition-all duration-300 ease-in-out relative overflow-hidden group">
+                <div class="absolute inset-0 bg-orange-600 opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300"></div>
+                <div class="w-full h-fit flex flex-col justify-center items-center gap-1 relative z-10 transform transition-transform duration-300 group-hover:scale-105">
+                  <div class="w-16 h-16 flex justify-center items-center bg-orange-600 rounded-lg mb-5">
+                    <img src="../static/soon.png" alt="" class="w-10/12 h-10/12">
+                  </div>
+                  <h3 class="text-xl font-medium relative">
+                    <span class="relative z-10">Coming soon</span>
+                    <!-- <span class="absolute left-full top-1/2 text-orange-600 -translate-y-1/2 ml-1 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1">→</span> -->
+                  </h3>
+                  <p class="text-sm text-stone-400">Coming soon</p>
+                </div>
+              </div>
+        </div>
+
+    </div>
+  </body>
+</html>

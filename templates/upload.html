@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playground</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/output.css') }}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body class="scroll-smooth">
+    <!-- Navbar -->
+    <div class="w-full h-fit flex justify-center items-center lg:p-10 p-6">
+      <div class="w-full h-fit ps-6 pe-5 py-3 lg:ps-12 lg:py-5 border border-stone-200/65 lg:rounded-full rounded-3xl bg-white flex flex-wrap justify-between items-center shadow-[0_0_15px_rgba(0,0,0,0.04)]">
+        <!-- Logo and Brand Name -->
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="38" height="38">
+            <defs>
+              <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" /> <!-- cyan-400 -->
+                <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" /> <!-- cyan-600 -->
+              </linearGradient>
+            </defs>
+            <path d="m261.02 522.36 130.57 226.15c23.312 40.383 9.457 92.102-30.926 115.41-40.383 23.312-92.102 9.457-115.41-30.926l-131-226.89c-7.1641-12.402-11.262-26.805-11.262-42.156 0-46.633 37.852-84.488 84.488-84.488 31.52 0 59.027 17.289 73.543 42.902zm250.82-15.266c4.2305 4.6445 7.9492 9.7539 11.074 15.266l130.56 226.15c23.324 40.383 9.457 92.102-30.926 115.41-40.383 23.312-92.09 9.457-115.41-30.926l-80.863-140.08c-4.2422-4.6445-7.9609-9.7539-11.074-15.266l-130.57-226.15c-23.312-40.383-9.457-92.102 30.926-115.41 40.383-23.312 92.102-9.457 115.41 30.926zm272.96 15.266 130.57 226.15c23.312 40.383 9.457 92.102-30.926 115.41-40.383 23.312-92.102 9.457-115.41-30.926l-80.875-140.08c-4.2305-4.6445-7.9492-9.7539-11.074-15.266l-130.56-226.15c-23.324-40.383-9.457-92.102 30.926-115.41 40.371-23.312 92.09-9.457 115.41 30.926l80.863 140.08c4.2422 4.6445 7.9609 9.7539 11.074 15.266zm300.95 71.547c7.1641 12.402 11.262 26.805 11.262 42.156 0 46.633-37.852 84.488-84.488 84.488-31.52 0-59.027-17.289-73.543-42.902l-130.57-226.15c-23.312-40.383-9.457-92.102 30.926-115.41 40.383-23.312 92.102-9.457 115.41 30.926z" fill="url(#cyanGradient)"/>
+          </svg>
+          <a href="/" class="lg:text-2xl text-xl font-medium ml-2">Playground</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-stone-500 hover:text-stone-600 rounded-md p-2">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop menu -->
+        <div class="hidden lg:flex lg:items-center lg:w-auto lg:gap-[430px]">
+          <div class="h-full flex justify-center items-end gap-8">
+            <a href="#projects" class="group w-fit hover:text-stone-500 text-center font-medium text-sm rounded-full transition duration-100">
+              Products
+              <span class="inline-block transition-transform text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-cyan-600 duration-200 group-hover:scale-125">→</span>
+            </a>
+            <a href="/about" class="group w-fit hover:text-stone-500 text-center font-medium text-sm rounded-full transition duration-100">
+              About us
+              <span class="inline-block transition-transform text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-cyan-600 duration-200 group-hover:scale-125">→</span>
+            </a>
+          </div>
+          <a href="/upload" class="group w-fit text-center bg-white hover:bg-stone-100 px-4 py-2 font-medium text-sm rounded-full border-[1.5px] border-cyan-400 hover:border-cyan-600 transition duration-100 ms-8">
+            Get started
+            <span class="inline-block transition-transform text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-cyan-600 duration-200 group-hover:scale-125">→</span>
+          </a>
+        </div>
+
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden w-full lg:hidden mt-4 py-2">
+          <div class="flex flex-col items-center gap-4">
+            <a href="#projects" class="group w-fit hover:text-stone-500 text-center font-medium text-sm rounded-full transition duration-100">
+              Products
+              <span class="inline-block transition-transform text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-cyan-600 duration-200 group-hover:scale-125">→</span>
+            </a>
+            <a href="/about" class="group w-fit hover:text-stone-500 text-center font-medium text-sm rounded-full transition duration-100">
+              About us
+              <span class="inline-block transition-transform text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-cyan-600 duration-200 group-hover:scale-125">→</span>
+            </a>
+            <a href="/upload" class="w-fit text-center bg-white hover:bg-stone-100 px-4 py-2 font-medium text-sm rounded-full border-[1.5px] border-cyan-400 hover:border-cyan-600 transition duration-100">
+              Get started
+              <span class="inline-block transition-transform text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-cyan-600 duration-200 group-hover:scale-125">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- main section -->
+    <div class="w-full h-fit py-8 flex flex-col lg:gap-10 gap-6 justify-center items-center">
+      <div class="">
+        <h1 class="text-3xl font-medium tracking-tight text-black text-center">Configure playground</h1>
+      </div>
+
+      <!-- Error message div -->
+      <div id="errorMessage" class="w-full text-center text-red-500 hidden"></div>
+
+      <!-- form div -->
+      <div class="lg:w-9/12 w-full lg:h-[66vh] h-fit flex justify-center items-center mb-10">
+
+        <form action="" class="w-full h-full flex flex-col justify-start items-center gap-12"  id="form" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+          <!-- inputs div -->
+          <div class="flex lg:flex-row flex-col lg:gap-0 gap-8 justify-between items-center h-full w-full">
+
+            <!-- select app -->
+            <div class="lg:w-5/12 w-10/12 h-full flex flex-col justify-start items-center">
+              <div class="w-full h-20 flex justify-start items-center gap-3 pb-4">
+                <h1 class="w-8 h-8 flex justify-center items-center text-md font-medium bg-cyan-50 border border-cyan-500 text-cyan-700 rounded-full">1</h1>
+                <h1 class="h-fit text-xl font-medium text-cyan-500">Select an app</h1>
+              </div>
+              <div class="grid grid-cols-2 gap-4 w-full h-full">
+                  <div>
+                    <input type="radio" name="selectedProject" id="legal" value="legal" class="peer hidden">
+                    <label for="legal" class="flex flex-col justify-center items-center h-full border rounded-xl bg-stone-100 hover:bg-white transition-all duration-300 ease-in-out relative overflow-hidden group cursor-pointer peer-checked:border-emerald-500">
+                      <div class="absolute inset-0 bg-emerald-600 opacity-0 group-hover:opacity-10 peer-checked:opacity-10 blur-xl transition-opacity duration-300"></div>
+                      <div class="w-full h-fit flex flex-col justify-center items-center gap-1 relative z-10 transform transition-transform duration-300 group-hover:scale-[1.025] p-4">
+                        <div class="w-10 h-10 flex justify-center items-center bg-emerald-600 rounded-lg mb-2">
+                          <img src="../static/legal.png" alt="" class="w-4/6 h-4/6">
+                        </div>
+                        <h3 class="text-sm text-center font-medium relative">
+                          <span class="relative z-10">Legal Analyser</span>
+                        </h3>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input type="radio" name="selectedProject" id="policy" value="policy" class="peer hidden">
+                    <label for="policy" class="flex flex-col justify-center items-center h-full border rounded-xl bg-stone-100 hover:bg-white transition-all duration-300 ease-in-out relative overflow-hidden group cursor-pointer peer-checked:border-purple-700">
+                      <div class="absolute inset-0 bg-purple-700 opacity-0 group-hover:opacity-10 peer-checked:opacity-10 blur-xl transition-opacity duration-300"></div>
+                      <div class="w-full h-fit flex flex-col justify-center items-center gap-1 relative z-10 transform transition-transform duration-300 group-hover:scale-[1.025] p-4">
+                        <div class="w-10 h-10 flex justify-center items-center bg-purple-700 rounded-lg mb-2">
+                          <img src="../static/policy.png" alt="" class="w-7/12 h-7/12">
+                        </div>
+                        <h3 class="text-sm text-center font-medium relative">
+                          <span class="relative z-10">Policy Analyser</span>
+                        </h3>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input type="radio" name="selectedProject" id="extraction" value="extraction" class="peer hidden">
+                    <label for="extraction" class="flex flex-col justify-center items-center h-full border rounded-xl bg-stone-100 hover:bg-white transition-all duration-300 ease-in-out relative overflow-hidden group cursor-pointer peer-checked:border-blue-700">
+                      <div class="absolute inset-0 bg-blue-700 opacity-0 group-hover:opacity-10 peer-checked:opacity-10 blur-xl transition-opacity duration-300"></div>
+                      <div class="w-full h-fit flex flex-col justify-center items-center gap-1 relative z-10 transform transition-transform duration-300 group-hover:scale-[1.025] p-4">
+                        <div class="w-10 h-10 flex justify-center items-center bg-blue-700 rounded-lg mb-2">
+                          <img src="../static/data.png" alt="" class="w-7/12 h-7/12">
+                        </div>
+                        <h3 class="text-sm text-center font-medium relative">
+                          <span class="relative z-10">Data Extraction</span>
+                        </h3>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input type="radio" name="selectedProject" id="medical" value="medical" class="peer hidden">
+                    <label for="medical" class="flex flex-col justify-center items-center h-full border rounded-xl bg-stone-100 hover:bg-white transition-all duration-300 ease-in-out relative overflow-hidden group cursor-pointer peer-checked:border-red-500">
+                      <div class="absolute inset-0 bg-red-500 opacity-0 group-hover:opacity-10 peer-checked:opacity-10 blur-xl transition-opacity duration-300"></div>
+                      <div class="w-full h-fit flex flex-col justify-center items-center gap-1 relative z-10 transform transition-transform duration-300 group-hover:scale-[1.025] p-4">
+                        <div class="w-10 h-10 flex justify-center items-center bg-red-500 rounded-lg mb-2">
+                          <img src="../static/medical.png" alt="" class="w-7/12 h-7/12">
+                        </div>
+                        <h3 class="text-sm text-center font-medium relative">
+                          <span class="relative z-10">Medical Report Analyser</span>
+                        </h3>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input type="radio" name="selectedProject" id="board" value="board" class="peer hidden">
+                    <label for="board" class="flex flex-col justify-center items-center h-full border rounded-xl bg-stone-100 hover:bg-white transition-all duration-300 ease-in-out relative overflow-hidden group cursor-pointer peer-checked:border-sky-400">
+                      <div class="absolute inset-0 bg-sky-400 opacity-0 group-hover:opacity-10 peer-checked:opacity-10 blur-xl transition-opacity duration-300"></div>
+                      <div class="w-full h-fit flex flex-col justify-center items-center gap-1 relative z-10 transform transition-transform duration-300 group-hover:scale-[1.025] p-4">
+                        <div class="w-10 h-10 flex justify-center items-center bg-sky-400 rounded-lg mb-2">
+                          <img src="../static/board.png" alt="" class="w-7/12 h-7/12">
+                        </div>
+                        <h3 class="text-sm text-center font-medium relative">
+                          <span class="relative z-10">Board Resolution Analyser</span>
+                        </h3>
+                      </div>
+                    </label>
+                  </div>
+
+              </div>
+            </div>
+
+            <!-- upload input -->
+            <div class="lg:w-6/12 w-10/12 h-full flex flex-col justify-start items-start">
+              <div class="w-full h-20 flex justify-start items-center gap-3 pb-4">
+                <h1 class="w-8 h-8 flex justify-center items-center text-md font-medium bg-cyan-50 border border-cyan-500 text-cyan-700 rounded-full">2</h1>
+                <h1 class="h-fit text-xl font-medium text-cyan-500">Upload your document</h1>
+              </div>
+              <label for="fileInput" class="w-full lg:h-full h-52 flex flex-col items-center justify-center border-4 bg-stone-100 outline outline-stone-200 border-white hover:outline-stone-300 hover:bg-stone-200 transition duration-300 rounded-xl cursor-pointer">
+                <input type="file" id="fileInput" class="sr-only" name="fileInput" accept=".pdf,.docx,.msg,.png" required />
+                <div class="flex flex-col items-center justify-center gap-2 p-8" id="display">
+                  <p class="text-lg text-stone-500 text-center">
+                    Click here to select a document
+                  </p>
+                  <p class="text-sm text-stone-400 text-center">
+                    We accept PDF, DOCX, MSG, and PNG
+                  </p>
+                </div>
+              </label>
+            </div>
+
+          </div>
+
+          <button type="submit" class="group w-fit bg-white hover:bg-stone-50 text-center px-4 py-2.5 font-medium text-sm rounded-full border border-cyan-400 hover:border-cyan-600 transition duration-100">
+            Generate results
+            <span class="inline-block transition-transform text-transparent bg-clip-text bg-gradient-to-b from-cyan-400 to-cyan-600 duration-200 group-hover:scale-125">→</span>
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+
+    <!-- footer -->
+    <div class="w-full h-0.5 grid grid-cols-6">
+      <div class="w-full h-full bg-emerald-600"></div>
+      <div class="w-full h-full bg-purple-700"></div>
+      <div class="w-full h-full bg-blue-700"></div>
+      <div class="w-full h-full bg-red-500"></div>
+      <div class="w-full h-full bg-sky-400"></div>
+      <div class="w-full h-full bg-orange-600"></div>
+    </div>
+    <div class="w-full h-20 border-t bg-stone-50 border-stone-300 px-10 flex justify-between items-center">
+      <p class="text-stone-500 font-medium">©️ FintegrationAI 2024</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='src/uploadScript.js') }}"></script>
+    <script>
+      // JavaScript to toggle the mobile menu
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      });
+    </script>
+  </body>
+</html>

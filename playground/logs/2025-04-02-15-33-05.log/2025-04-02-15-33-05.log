@@ -1,0 +1,8 @@
+[2025-04-02 15:33:05,758 ] 16 root - INFO - Store indexing method started for store vectors
+[2025-04-02 15:33:42,995 ] 1038 httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[2025-04-02 15:33:45,651 ] 1038 httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[2025-04-02 15:33:46,946 ] 74 faiss.loader - INFO - Loading faiss with AVX512 support.
+[2025-04-02 15:33:46,947 ] 79 faiss.loader - INFO - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+[2025-04-02 15:33:46,947 ] 86 faiss.loader - INFO - Loading faiss with AVX2 support.
+[2025-04-02 15:33:50,104 ] 88 faiss.loader - INFO - Successfully loaded faiss with AVX2 support.

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Report Analyser</title>
+    <meta
+      name="description"
+      content="Medical Report Analyser is a powerful tool for analyzing Medical documents."
+    />
+    <link rel="canonical" href="https://www.policy.fintegrationai.com/" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dist/css/output.css') }}"
+    />
+    <style>
+      pre {
+        white-space: pre-wrap; /* CSS3 */
+        white-space: -moz-pre-wrap; /* Firefox */
+        white-space: -pre-wrap; /* Opera <7 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        word-wrap: break-word; /* IE */
+        overflow-wrap: break-word; /* Modern CSS */
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .response-container {
+        margin: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div
+      class="w-full h-10 border-b flex items-center justify-between px-8 py-8"
+    >
+      <div>
+        <a href="/medical"
+          ><h1 class="text-xl font-semibold text-cyan-600">
+            Medical Report Analyser
+          </h1></a
+        >
+      </div>
+      <div class="flex justify-between">
+        <a href="/upload">
+          <div
+            style="margin-right: 10px"
+            class="w-fit py-2 px-3 bg-white border border-cyan-600 text-cyan-600 hover:border-cyan-700 hover:text-cyan-700 text-sm rounded-lg font-semibold"
+          >
+            Get started
+          </div>
+        </a>
+        <a href="/transcript_medical">
+          <div
+            style="margin-right: 10px"
+            class="p-10 w-fit py-2 px-3 bg-white border border-cyan-600 text-cyan-600 hover:border-cyan-700 hover:text-cyan-700 text-sm rounded-lg font-semibold"
+          >
+            Transcript
+          </div>
+        </a>
+        <a href="/json_medical">
+          <div
+            class="p-10 w-fit py-2 px-3 bg-white border border-cyan-600 text-cyan-600 hover:border-cyan-700 hover:text-cyan-700 text-sm rounded-lg font-semibold"
+          >
+            JSON
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- header -->
+    <div
+      class="w-full h-fit bg-contain bg-center bg-white flex flex-col items-center gap-10 lg:p-24 lg:py-16 px-10 py-16"
+      style="background-image: url(../static/Vector.png)"
+    >
+      <div class="w-full h-fit flex lg:flex-row flex-col gap-12 lg:gap-0">
+        <!-- report -->
+        <div class="w-full lg:w-12/12 flex flex-col items-center gap-10">
+          <!-- header
+          <div class="w-5/6 flex justify-start items-start">
+            <h1 class="text-3xl font-semibold text-zinc-800 text-center">
+              Your untangled document
+            </h1>
+          </div> -->
+
+          <!-- summary div -->
+          <div
+            class="w-full lg:w-5/6 h-fit bg-white border border-stone-300 rounded-lg text-zinc-800 shadow-sm"
+          >
+            <div
+              class="w-full h-fit rounded-tr-lg rounded-tl-lg px-5 pt-6 flex items-center justify-start gap-3"
+            >
+              <img
+                src="../static/summary-cyan.png"
+                alt=""
+                class="h-6"
+              />
+              <h1 class="text-2xl font-semibold text-cyan-600">
+                PERSONAL INFORMATION
+              </h1>
+            </div>
+            <div
+              class="p-6 pt-4 bg-white rounded-br-lg rounded-bl-lg text-zinc-800"
+            ></div>
+            <div class="response-container">
+              <!--<h1>{{ json_response.ReportName }}</h1>-->
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ personal_response.Name }}</td>
+                    <td>{{ personal_response.Gender }}</td>
+                    <td>{{ personal_response.Age }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- summary div -->
+          <div
+            class="w-full lg:w-5/6 h-fit bg-white border border-stone-300 rounded-lg text-zinc-800 shadow-sm"
+          >
+            <div
+              class="w-full h-fit rounded-tr-lg rounded-tl-lg px-5 pt-6 flex items-center justify-start gap-3"
+            >
+              <img
+                src="../static/summary-cyan.png"
+                alt=""
+                class="h-6"
+              />
+              <h1 class="text-2xl font-semibold text-cyan-600">
+                LABORATORY REPORT
+              </h1>
+            </div>
+            <div
+              class="p-6 pt-4 bg-white rounded-br-lg rounded-bl-lg text-zinc-800"
+            ></div>
+            <div class="response-container">
+              <!--<h1>{{ json_response.ReportName }}</h1>-->
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Test Name</th>
+                    <th>Actual Measurement</th>
+                    <th>Measurement Unit</th>
+                    <th>Reference Range</th>
+                    <th>Is Within Range</th>
+                  </tr>
+                </thead>
+                {% for test in json_response.Tests %}
+                <tbody>
+                  <tr>
+                    <td>{{ test.TestName }}</td>
+                    <td>{{ test.ActualMeasurement }}</td>
+                    <td>{{ test.MeasurementUnit }}</td>
+                    <td>{{ test.ReferenceRange }}</td>
+                    <td>{{ test.IsValueNormal }}</td>
+                  </tr>
+                </tbody>
+                {% endfor %}
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="w-full h-fit lg:py-4 py-8 px-10 bg-cyan-950 flex lg:flex-row flex-col lg:justify-between justify-center gap-2 items-center border-t border-zinc-600"
+    >
+      <p class="text-stone-300 font-medium">
+        Medical Report Analyser by FintegrationAI
+      </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      defer
+      data-domain="analyser.fintegrationai.com"
+      src="https://plausible.io/js/script.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+.env
+.env/
+playground-env
+playground-env/
+node_modules
+node_modules
+__pycache__
+flask_session
+venv
+DB

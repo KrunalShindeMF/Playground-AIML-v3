@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal Analyser</title>
+    <meta
+      name="description"
+      content="Legal Analyser is a powerful tool for analyzing legal documents. Quickly identify key information, extract insights, and chat with your legal document."
+    />
+    <link rel="canonical" href="https://www.analyser.fintegrationai.com/" />
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Legal Analyser" />
+    <meta
+      property="og:description"
+      content="Legal Analyser is a powerful tool for analyzing legal documents. Quickly identify key information, extract insights, and chat with your legal document."
+    />
+    <meta property="og:image" content="/legal/static/thumbnail.png" />
+    <meta
+      property="og:url"
+      content="https://www.analyser.fintegrationai.com/"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Legal Analyser" />
+    <meta
+      name="twitter:description"
+      content="Legal Analyser is a powerful tool for analyzing legal documents. Quickly identify key information, extract insights, and chat with your legal document."
+    />
+    <meta name="twitter:image" content="/static/thumbnail.png" />
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Legal Analyser",
+        "description": "Legal Analyser is a powerful tool for analyzing legal documents. Quickly identify key information, extract insights, and chat with your legal document.",
+        "url": "https://www.analyser.fintegrationai.com/",
+        "image": "/static/thumbnail.png"
+      }
+    </script>
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <!-- Other Metadata -->
+    <meta
+      name="keywords"
+      content="legal documents, document analysis, legal tech, contract analysis"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="FintegrationAI" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dist/css/output.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div
+      class="w-full h-10 border-b flex items-center justify-between px-8 py-8"
+    >
+      <a href="/legal"
+        ><h1 class="text-xl font-semibold text-green-600">Legal Analyser</h1></a
+      >
+      <div class="flex items-center justify-between gap-8">
+        <!--<a href="/legal/freelancers"
+          ><h1 class="text-xl font-semibold text-green-600">Freelancers</h1></a
+        >
+        <a href="/legal/founders"
+          ><h1 class="text-xl font-semibold text-green-600">Founders</h1></a
+        >-->
+        <a href="/upload">
+          <div
+            class="w-fit py-2 px-3 bg-white border border-green-600 text-green-600 hover:border-green-700 hover:text-green-700 text-sm rounded-lg font-semibold"
+          >
+            Get started
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- header -->
+    <div
+      class="w-full h-fit bg-contain bg-center bg-white flex flex-col items-center gap-10 lg:p-24 lg:py-16 px-10 py-16"
+      style="background-image: url(../static/Vector.png)"
+      ;>
+      <div class="w-full h-fit flex lg:flex-row flex-col gap-12 lg:gap-0">
+        <!-- report -->
+        <div class="w-full lg:w-8/12 flex flex-col items-center gap-10">
+          <!-- header -->
+          <div class="w-5/6 flex justify-start items-start">
+            <h1 class="text-3xl font-semibold text-zinc-800 text-center">
+              Your untangled document
+            </h1>
+          </div>
+
+          <!-- summary div -->
+          <div
+            class="w-full lg:w-5/6 h-fit bg-white border border-stone-300 rounded-lg text-zinc-800 shadow-sm"
+          >
+            <div
+              class="w-full h-fit rounded-tr-lg rounded-tl-lg px-5 pt-6 flex items-center justify-start gap-3"
+            >
+              <img src="../static/summary-green.png" alt="" class="h-6" />
+              <h1 class="text-2xl font-semibold text-green-600">Summary</h1>
+            </div>
+            <div
+              class="p-6 pt-4 bg-white rounded-br-lg rounded-bl-lg text-zinc-800"
+            >
+              {% if summary_response %} {{ summary_response }} {% else %}
+              <p>No response was generated :/</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- clauses div -->
+          <div
+            class="w-full lg:w-5/6 bg-white border border-stone-300 rounded-lg text-zinc-800 shadow-sm"
+          >
+            <div
+              class="w-full h-fit rounded-tr-lg rounded-tl-lg px-4 pt-6 flex items-center justify-start gap-3"
+            >
+              <img src="../static/clauses green.png" alt="" class="h-6" />
+              <h1 class="text-2xl font-semibold text-green-600">Key clauses</h1>
+            </div>
+            <div
+              class="ps-6 pe-4 py-6 pt-4 bg-white rounded-br-lg rounded-bl-lg text-zinc-800"
+            >
+              {% if clauses_response %}
+              <ul>
+                {% for item in clauses_response %}
+                <li class="mb-5 ms-3 list-disc">{{ item }}</li>
+                {% endfor %}
+              </ul>
+              {% else %}
+              <p>No response was generated :/</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- items div -->
+          <div
+            class="w-full lg:w-5/6 bg-white border border-stone-300 rounded-lg text-zinc-800 shadow-sm"
+          >
+            <div
+              class="w-full h-fit rounded-tr-lg rounded-tl-lg px-4 pt-6 flex items-center justify-start gap-3"
+            >
+              <img src="../static/action-green.png" alt="" class="h-5" />
+              <h1 class="text-2xl font-semibold text-green-600">
+                Action items
+              </h1>
+            </div>
+            <div
+              class="ps-6 pe-4 py-6 pt-4 bg-white rounded-br-lg rounded-bl-lg text-zinc-800"
+            >
+              {% if items_response %}
+              <ul>
+                {% for item in items_response %}
+                <li class="mb-5 ms-3 list-disc">{{ item }}</li>
+                {% endfor %}
+              </ul>
+              {% else %}
+              <p>No response was generated :/</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- red flag div -->
+          <div
+            class="w-full lg:w-5/6 bg-white border border-stone-300 rounded-lg text-zinc-800 shadow-sm"
+          >
+            <div
+              class="w-full h-fit rounded-tr-lg rounded-tl-lg px-4 pt-6 flex items-center justify-start gap-3"
+            >
+              <img src="../static/flag green.png" alt="" class="h-5" />
+              <h1 class="text-2xl font-semibold text-green-600">
+                Potential red flags
+              </h1>
+            </div>
+            <div
+              class="ps-6 pe-4 py-6 pt-4 bg-white rounded-br-lg rounded-bl-lg text-zinc-800"
+            >
+              {% if flags_response %}
+              <ul>
+                {% for item in flags_response %}
+                <li class="mb-5 ms-3 list-disc">{{ item }}</li>
+                {% endfor %}
+              </ul>
+              {% else %}
+              <p>No response was generated :/</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- finances div -->
+          <div
+            class="w-full lg:w-5/6 bg-white border border-stone-300 rounded-lg text-zinc-800 shadow-sm"
+          >
+            <div
+              class="w-full h-fit rounded-tr-lg rounded-tl-lg px-4 pt-6 flex items-center justify-start gap-3"
+            >
+              <img src="../static/money green.png" alt="" class="h-6" />
+              <h1 class="text-2xl font-semibold text-green-600">
+                Financial terms
+              </h1>
+            </div>
+            <div
+              class="ps-6 pe-4 py-6 pt-4 bg-white rounded-br-lg rounded-bl-lg text-zinc-800"
+            >
+              {% if money_response %}
+              <ul>
+                {% for item in money_response %}
+                <li class="mb-5 ms-3 list-disc">{{ item }}</li>
+                {% endfor %}
+              </ul>
+              {% else %}
+              <p>No response was generated :/</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- questions flag div -->
+          <div
+            class="w-full lg:w-5/6 bg-white border border-stone-300 rounded-lg text-zinc-800 shadow-sm"
+          >
+            <div
+              class="w-full h-fit rounded-tr-lg rounded-tl-lg px-4 pt-6 flex items-center justify-start gap-3"
+            >
+              <img
+                src="../static/questions green.png"
+                alt=""
+                class="h-6"
+              />
+              <h1 class="text-2xl font-semibold text-green-600">
+                Questions for your attorney
+              </h1>
+            </div>
+            <div
+              class="ps-6 pe-4 py-6 pt-4 bg-white rounded-br-lg rounded-bl-lg text-zinc-800"
+            >
+              {% if questions_response %}
+              <ul>
+                {% for item in questions_response %}
+                <li class="mb-5 ms-3 list-disc">{{ item }}</li>
+                {% endfor %}
+              </ul>
+              {% else %}
+              <p>No response was generated :/</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- finances div -->
+          <div
+            class="w-full lg:w-5/6 bg-white border border-stone-300 rounded-lg text-zinc-800 shadow-sm"
+          >
+            <div
+              class="w-full h-fit rounded-tr-lg rounded-tl-lg px-4 pt-6 flex items-center justify-start gap-3"
+            >
+              <img
+                src="../static/glossary green.png"
+                alt=""
+                class="h-6"
+              />
+              <h1 class="text-2xl font-semibold text-green-600">Glossary</h1>
+            </div>
+            <div
+              class="ps-6 pe-4 py-6 pt-4 bg-white rounded-br-lg rounded-bl-lg text-zinc-800"
+            >
+              <!-- var = "placeholder" -->
+              <!-- if response, then var = response -->
+              {% if glossary_response %}
+              <ul>
+                {% for item in glossary_response %}
+                <li class="mb-5 ms-3 list-disc">{{ item }}</li>
+                {% endfor %}
+              </ul>
+              {% else %}
+              <p>No response was generated :/</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <!-- chatbot -->
+        <div class="lg:w-4/12 w-full max-h-full">
+          <div
+            class="w-full chat-window bg-stone-100 rounded-xl flex flex-col justify-between border sticky top-20"
+          >
+            <!-- header -->
+            <div class="p-8 w-full h-fit rounded-tr-xl rounded-tl-xl">
+              <h1 class="font-semibold text-2xl text-green-800">
+                Chat with your document
+              </h1>
+            </div>
+
+            <!-- chat -->
+            <div
+              class="w-full h-full px-6 flex flex-col justify-start overflow-y-auto"
+              id="messageFormeight"
+            ></div>
+
+            <!-- input -->
+            <div class="w-full h-fit p-6 rounded-br-xl rounded-bl-xl">
+              <form id="messageArea" class="flex flex-row">
+                <input
+                  type="hidden"
+                  name="csrf_token"
+                  value="{{ csrf_token() }}"
+                />
+                <input
+                  type="text"
+                  id="text"
+                  name="msg"
+                  placeholder="Type your message..."
+                  autocomplete="off"
+                  class="max-h-full w-full rounded-tl-2xl rounded-bl-2xl bg-white p-3 ps-6 border"
+                  required
+                />
+                <div
+                  class="p-2 px-4 bg-green-600 rounded-tr-2xl rounded-br-2xl"
+                >
+                  <button
+                    type="submit"
+                    id="send"
+                    class="text-white text-2xl font-semibold"
+                  >
+                    →
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="w-full h-fit lg:py-4 py-8 px-10 bg-white flex lg:flex-row flex-col lg:justify-between justify-center gap-2 items-center border-t border-zinc-300"
+    >
+      <p class="text-zinc-600 font-medium">Legal Analyser by FintegrationAI</p>
+      <div
+        class="flex lg:flex-row flex-col justify-center items-center lg:gap-6 gap-2"
+      >
+        <a href="/contact" class="text-zinc-400 hover:text-zinc-500"
+          >Contact us</a
+        >
+        <a href="/privacy" class="text-zinc-400 hover:text-zinc-500"
+          >Privacy policy</a
+        >
+        <a href="/terms" class="text-zinc-400 hover:text-zinc-500"
+          >Terms and conditions</a
+        >
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // Set CSRF token in AJAX request headers
+        var csrfToken = "{{ csrf_token() }}";
+
+        $.ajaxSetup({
+          headers: {
+            "X-CSRFToken": csrfToken,
+          },
+        });
+        $("#messageArea").on("submit", function (event) {
+          var rawText = $("#text").val();
+
+          var userHtml = `
+              <div class="flex justify-end mb-6">
+                  <div class="bg-green-600 text-white rounded-lg py-2 px-4 max-w-md">
+                      ${rawText}
+                  </div>
+                  <div class="ml-2">
+                      <img src="../static/noun-user-6849596-16A34A.png" class="border w-10 h-10 rounded-full">
+                  </div>
+              </div>
+          `;
+
+          $("#text").val("");
+          $("#messageFormeight").append(userHtml);
+
+          // Scroll to the bottom of the chat window after posting a message
+          $("#messageFormeight").scrollTop(
+            $("#messageFormeight")[0].scrollHeight
+          );
+
+          $.ajax({
+            data: {
+              msg: rawText,
+            },
+            type: "POST",
+            url: "/analysis_legal",
+          }).done(function (data) {
+            var botHtml = `
+                  <div class="flex justify-start mb-6 transition-opacity duration-500">
+                      <div class="mr-2 w-11">
+                        <img src="../static/noun-user-6849596-16A34A.png" class="border w-10 h-10 rounded-full">
+                      </div>
+                      <div class="bg-stone-200 rounded-lg py-2 px-4 w-fit">
+                          ${data}
+                      </div>
+                  </div>
+              `;
+            $("#messageFormeight").append($.parseHTML(botHtml));
+
+            // Scroll to the bottom of the chat window after receiving the bot's response
+            $("#messageFormeight").scrollTop(
+              $("#messageFormeight")[0].scrollHeight
+            );
+          });
+          event.preventDefault();
+        });
+      });
+    </script>
+    <script
+      defer
+      data-domain="analyser.fintegrationai.com"
+      src="https://plausible.io/js/script.js"
+    ></script>
+  </body>
+</html>
+
+<!-- <div class="d-flex justify-content-start h-100">
+  <div class="chat">
+      <div class="card">
+          <div class="card-header msg_head">
+              <div class="d-flex bd-highlight">
+                  <div class="img_cont">
+                      <img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img">
+                      <img src="../static/noun-chat-6848645-16A34A-2.png" class="rounded-circle user_img">
+
+                      <span class="online_icon"></span>
+                  </div>
+                  <div class="user_info">
+                      <span>Chat with your document</span>
+                  </div>
+              </div>
+          </div>
+          <div id="messageFormeight" class="card-body msg_card_body">
+
+          </div>
+          <div class="card-footer">
+              <form id="messageArea" class="input-group mb-0">
+                  <input type="text" id="text" name="msg" placeholder="Type your message..." autocomplete="off" class="form-control type_msg" required/>
+                  <div class="input-group-append">
+                      <button type="submit" id="send" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div> -->

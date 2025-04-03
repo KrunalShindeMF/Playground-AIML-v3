@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Report Analyser</title>
+    <meta
+      name="description"
+      content="Medical Report Analyser is a powerful tool for analyzing legal documents."
+    />
+    <link rel="canonical" href="https://www.policy.fintegrationai.com/" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dist/css/output.css') }}"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <div
+      class="w-full h-10 border-b flex items-center justify-between px-8 py-8"
+    >
+      <a href="/medical"
+        ><h1 class="text-xl font-semibold text-cyan-600">
+          Medical Report Analyser
+        </h1></a
+      >
+      <a href="/upload">
+        <div
+          class="w-fit py-2 px-3 bg-white border border-cyan-600 text-cyan-600 hover:border-cyan-700 hover:text-cyan-700 text-sm rounded-lg font-semibold"
+        >
+          Get started
+        </div>
+      </a>
+    </div>
+
+    <!-- hero section -->
+    <div
+      class="w-full h-fit flex items-center justify-center px-14 py-16 lg:p-36 border bg-cover bg-no-repeat bg-center"
+      style="background-image: url(../static/Vector.png)"
+    >
+      <div
+        class="w-11/12 lg:w-4/6 flex bg-cover bg-no-repeat bg-center flex-col items-center justify-center gap-10"
+      >
+        <h1
+          class="text-5xl lg:text-6xl font-bold text-center text-zinc-800 leading-tight"
+        >
+          Detangle Medical Paperwork
+        </h1>
+        <p class="text-lg lg:w-9/12 text-center font-medium text-neutral-500">
+          Medical Report Analyser helps you understand how changes in medical
+          affect your organisation, and how you can best prepare.
+        </p>
+        <div class="flex justify-center items-center gap-4">
+          <a href="/upload">
+            <div
+              class="w-fit py-2.5 px-4 bg-cyan-600 border border-cyan-600 hover:border-cyan-700 hover:bg-cyan-700 text-white rounded-lg font-semibold"
+            >
+              Detangle a Medical Document
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- feature section -->
+    <div
+      class="w-full h-fit bg-cyan-600 px-8 py-16 lg:p-24 flex flex-col items-center justify-center gap-10"
+    >
+      <h1 class="text-4xl font-bold text-center text-white">
+        In-depth insights, instantly
+      </h1>
+      <img
+        src="../static/Summary.png"
+        alt="Diagram of all features"
+        class="w-fit"
+      />
+    </div>
+
+    <!-- steps section -->
+    <div
+      class="w-full h-fit bg-cover bg-no-repeat bg-center px-10 py-16 lg:p-24 flex flex-col items-center justify-center gap-12 lg:gap-16"
+      style="background-image: url(../static/Vector.png)"
+    >
+      <h1 class="text-4xl w-4/6 font-bold text-center text-zinc-800">
+        Convenient, transparent and secure
+      </h1>
+
+      <div
+        class="h-fit lg:w-5/6 lg:grid lg:grid-cols-2 lg:gap-8 gap-10 flex flex-col"
+      >
+        <div
+          class="w-full h-fit bg-white border shadow-md border-stone-300 rounded-3xl flex flex-col items-start justify-start"
+        >
+          <div
+            class="w-full h-52 p-10 bg-stone-200 rounded-tl-3xl rounded-tr-3xl flex justify-center items-center"
+          >
+            <img
+              src="../static/noun-report-6821562-7D7D7D.png"
+              alt=""
+              class="h-28"
+            />
+          </div>
+          <div
+            class="flex h-52 flex-col justify-start items-start gap-3 px-8 py-6"
+          >
+            <p class="text-md text-stone-400 font-medium">Step 1</p>
+            <h3 class="font-semibold text-cyan-600 text-xl">
+              Upload your Medical document
+            </h3>
+            <p class="text-stone-600">
+              We accept legal documents written in English and uploaded as a PDF
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="w-full h-fit bg-white border shadow-md border-stone-300 rounded-3xl flex flex-col items-start justify-start"
+        >
+          <div
+            class="w-full h-52 p-10 bg-stone-200 rounded-tl-3xl rounded-tr-3xl flex justify-center items-center"
+          >
+            <img
+              src="../static/noun-analyse-4788295-7D7D7D-2.png"
+              alt=""
+              class="h-32"
+            />
+          </div>
+          <div
+            class="flex h-52 flex-col justify-start items-start gap-3 px-8 py-6"
+          >
+            <p class="text-md text-stone-400 font-medium">Step 2</p>
+            <h3 class="font-semibold text-cyan-600 text-xl">
+              Access your report
+            </h3>
+            <p class="text-stone-600">
+              Unlock a detailed analysis on your document, generated by AI
+            </p>
+          </div>
+        </div>
+
+        <!--<div
+          class="w-full h-fit bg-white border shadow-md border-stone-300 rounded-3xl flex flex-col items-start justify-start"
+        >
+          <div
+            class="w-full h-52 p-10 bg-stone-200 rounded-tl-3xl rounded-tr-3xl flex justify-center items-center"
+          >
+            <img
+              src="../static/noun-chat-6979465-7D7D7D-2.png"
+              alt=""
+              class="h-32"
+            />
+          </div>
+          <div
+            class="flex h-52 flex-col justify-start items-start gap-3 px-8 py-6"
+          >
+            <p class="text-md text-stone-400 font-medium">Step 3</p>
+            <h3 class="font-semibold text-cyan-600 text-xl">Chat with AI</h3>
+            <p class="text-stone-600">
+              Ask detailed questions regarding your legal document
+            </p>
+          </div>
+        </div>-->
+      </div>
+
+      <!-- <div class="h-fit lg:w-5/6 lg:h-64 bg-cyan-950 rounded-3xl flex flex-col lg:flex-row justify-start items-center">
+      <div class="lg:w-9/12 p-10 lg:px-20 h-full flex flex-col lg:gap-4 gap-6 justify-center">
+        <h1 class="text-white text-3xl font-medium"><span class="font-bold">NEW:</span> Chat with a Policy</h1>
+        <h3 class="text-white text-md">Enjoy upto 25 questions with our legal chatbot free of cost when you pay for Untangle. Ask questions about your document, request more information on your report, and much more.</h3>
+      </div>
+      <div class="lg:w-3/12 w-full lg:h-full p-4 pb-8 lg:p-0 bg-cyan-600 flex flex-col gap-4 justify-center items-center rounded-bl-3xl rounded-br-3xl lg:rounded-none lg:rounded-tr-3xl lg:rounded-br-3xl">
+        <h1 class="text-white font-semibold text-lg"></h1>
+        <div class="flex gap-2 items-center">
+          <p class="text-white font-medium text-sm"></p>
+          <h1 class="text-white font-extrabold text-6xl">25</h1>
+        </div>
+        <h1 class="text-white font-semibold text-lg w-7/12 lg:w-7/12 text-center">FREE questions at no extra charge</h1>
+      </div>
+    </div> -->
+    </div>
+
+    <!-- CTA section -->
+    <div
+      class="bg-cyan-950 w-full h-fit lg:p-28 px-10 py-16 flex flex-col justify-center items-center gap-10"
+    >
+      <h1 class="text-stone-100 text-5xl font-medium text-center leading-tight">
+        The fastest way to <span class="text-cyan-500 font-bold">detangle</span
+        ><br />
+        medical paperwork
+      </h1>
+      <div class="flex justify-center items-center gap-4">
+        <a href="/upload">
+          <div
+            class="w-fit py-3 px-4 bg-transparent border border-white hover:border-cyan-500 hover:text-cyan-500 text-white rounded-lg font-semibold"
+          >
+            Get started
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="w-full h-fit lg:py-4 py-8 px-10 bg-cyan-950 flex lg:flex-row flex-col lg:justify-between justify-center gap-2 items-center border-t border-zinc-600"
+    >
+      <p class="text-stone-300 font-medium">
+        Medical Report Analyser by FintegrationAI
+      </p>
+      <!-- <div class="flex lg:flex-row flex-col justify-center items-center lg:gap-6 gap-2">
+      <a href="/contact" class="text-stone-400 hover:text-stone-300">Contact us</a>
+      <a href="/privacy" class="text-stone-400 hover:text-stone-300">Privacy policy</a>
+      <a href="/terms" class="text-stone-400 hover:text-stone-300">Terms and conditions</a>
+    </div> -->
+    </div>
+    <script
+      defer
+      data-domain="analyser.fintegrationai.com"
+      src="https://plausible.io/js/script.js"
+    ></script>
+  </body>
+</html>
